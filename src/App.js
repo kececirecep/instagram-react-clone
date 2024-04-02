@@ -1,10 +1,12 @@
 import './App.css';
+import Aside from './components/Aside/Aside';
 
 function App() {
+
   return (
-    <div className='bg-red-500'>
-       sadsasd
-    </div>
+    <>
+      <Aside />
+    </>
   );
 }
 
