@@ -7,6 +7,10 @@ import { CiLogout } from "react-icons/ci";
 
 import { FaInstagram } from "react-icons/fa";
 
+ 
+import { VscDiffAdded } from "react-icons/vsc";
+import { PiUserSquare } from "react-icons/pi";
+
 const menuList = [
     {
         text: 'Home',
@@ -14,10 +18,14 @@ const menuList = [
         url: '/home'
     },
     {
-        text: 'Home',
-        icon: <GoHome size={30} color='black' />,
-        url: '/xs'
-    }
+        text: 'Create',
+        icon: <VscDiffAdded size={30} color='black' />,
+        url: '/create'
+    },{
+        text: 'Profile',
+        icon: <PiUserSquare size={30} color='black' />,
+        url: '/profile'
+    },
 ]
 
 const Aside = () => {
