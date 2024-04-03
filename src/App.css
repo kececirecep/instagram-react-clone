@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities; 
 
+body{
+    background-color: #fafafa;
+}
+
 #sidebar a.active{
     background: #f2f2f2;
 }

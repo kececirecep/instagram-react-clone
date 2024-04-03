@@ -44,7 +44,7 @@ const Aside = () => {
     }, []);
 
     return (
-        <div className='border-r-2 border-gray-300 h-[100vh] flex flex-col px-3 py-6 w-[100px] xl:w-[335px] duration-300 ' id='sidebar'>
+        <div className='border-r-2 border-gray-300 h-[100vh] flex flex-col px-3 py-6 w-[100px] xl:w-[335px] duration-300 bg-white' id='sidebar'>
             <Link to="/" className='p-3 mb-6'>
                 {
                     windowWidth >= 1280 ? (
