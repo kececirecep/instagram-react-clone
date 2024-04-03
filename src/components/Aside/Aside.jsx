@@ -17,7 +17,7 @@ const menuList = [
     {
         text: 'Home',
         icon: <GoHome size={30} color='black' />,
-        url: '/home'
+        url: '/'
     },
     {
         text: 'Search',
@@ -26,7 +26,7 @@ const menuList = [
     },{
         text: 'Create',
         icon: <VscDiffAdded size={30} color='black' />,
-        url: '/create'
+        url: '/post-share'
     },{
         text: 'Profile',
         icon: <PiUserSquare size={30} color='black' />,

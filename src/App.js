@@ -1,17 +1,20 @@
 import './App.css';
 import Aside from './components/Aside/Aside';
 import Header from './components/Header/Header';
-import Login from './pages/Login/Login';
-import Post from './pages/Post/Post';
-import PostDetail from './pages/PostDetail/PostDetail';
+import Home from './pages/Home/Home'; 
 import PostShare from './pages/PostShare/PostShare';
-import Profile from './pages/Profile';
-import ProfileUpdate from './pages/ProfileUpdate/ProfileUpdate';
-import Register from './pages/Register/Register';
-import Search from './pages/Search/Search';
+import Profile from './pages/Profile'; 
+import Search from './pages/Search/Search'; 
 import UserFollowers from './pages/UserFollowers/UserFollowers';
+import ProfileUpdate from './pages/ProfileUpdate/ProfileUpdate'
+import PostDetails from './pages/PostDetail/PostDetail'
+import Login from './pages/Login/Login'
+import Register from './pages/Register/Register'
+import Error from './pages/Error/Error'
 
-function App() {
+import { Routes, Route } from 'react-router-dom';
+
+function App() {  
 
   return (
     <div className='flex'>
@@ -19,7 +22,21 @@ function App() {
       <div className='w-full flex flex-col h-[100vh]'>
         <Header />
 
-      
+
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/search' element={<Search/> } />
+          <Route path='/post-share' element={<PostShare/> } />
+          <Route path='/profile' element={<Profile/> } />
+          <Route path='/followers/:username' element={<UserFollowers/> } />
+          <Route path='/update/:username' element={<ProfileUpdate/> } />
+          <Route path='/detail/:postId' element={<PostDetails/> } />
+          <Route path='/login' element={<Login/> } />
+          <Route path='/register' element={<Register/> } />
+          <Route path='*' element={<Error/> } />
+        </Routes>
+
+
 
       </div>
     </div>
