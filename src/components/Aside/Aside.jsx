@@ -11,6 +11,8 @@ import { FaInstagram } from "react-icons/fa";
 import { VscDiffAdded } from "react-icons/vsc";
 import { PiUserSquare } from "react-icons/pi";
 
+import { IoSearchOutline } from "react-icons/io5";
+
 const menuList = [
     {
         text: 'Home',
@@ -18,6 +20,10 @@ const menuList = [
         url: '/home'
     },
     {
+        text: 'Search',
+        icon: <IoSearchOutline size={30} color='black' />,
+        url: '/search'
+    },{
         text: 'Create',
         icon: <VscDiffAdded size={30} color='black' />,
         url: '/create'
@@ -25,7 +31,7 @@ const menuList = [
         text: 'Profile',
         icon: <PiUserSquare size={30} color='black' />,
         url: '/profile'
-    },
+    }
 ]
 
 const Aside = () => {

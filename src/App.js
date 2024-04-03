@@ -19,20 +19,7 @@ function App() {
       <div className='w-full flex flex-col h-[100vh]'>
         <Header />
 
-        {/*<Post /> */}
-        {/*<PostDetail />*/}
-
-
-        {/*<Profile />*/}
-
-
-        {/* <ProfileUpdate />*/}
-
-
-        {/*<UserFollowers /> */}
-
-        <Search />
-
+      
 
       </div>
     </div>
