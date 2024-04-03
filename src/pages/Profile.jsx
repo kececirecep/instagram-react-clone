@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Profile = () => {
     return (
-        <div>
+        <div className='flex justify-center overflow-y-auto flex-1 py-10'>
             <div className="flex justify-center flex-col items-center sm:flex-row gap-12 text-center sm:text-start">
                 <div className='w-32 h-32'>
                     <img src="/images/user.jpeg" className='w-full rounded-full' alt="" />

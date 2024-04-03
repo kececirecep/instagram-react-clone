@@ -4,8 +4,12 @@ import Header from './components/Header/Header';
 import Login from './pages/Login/Login';
 import Post from './pages/Post/Post';
 import PostDetail from './pages/PostDetail/PostDetail';
+import PostShare from './pages/PostShare/PostShare';
 import Profile from './pages/Profile';
+import ProfileUpdate from './pages/ProfileUpdate/ProfileUpdate';
 import Register from './pages/Register/Register';
+import Search from './pages/Search/Search';
+import UserFollowers from './pages/UserFollowers/UserFollowers';
 
 function App() {
 
@@ -14,15 +18,22 @@ function App() {
       <Aside />
       <div className='w-full flex flex-col h-[100vh]'>
         <Header />
-        {/* <div className='flex flex-1 overflow-y-auto items-center flex-col '>
-          <Post />      
-        </div>   */}
-        {/* <div className='flex justify-center overflow-y-auto flex-1 py-6 mb-4'>
-          <PostDetail />
-        </div> */}
-        <div className='flex justify-center overflow-y-auto flex-1 py-10'>
-          <Profile />
-        </div>
+
+        {/*<Post /> */}
+        {/*<PostDetail />*/}
+
+
+        {/*<Profile />*/}
+
+
+        {/* <ProfileUpdate />*/}
+
+
+        {/* <UserFollowers /> */}
+
+        {/*<Search />*/}
+
+
       </div>
     </div>
   );
