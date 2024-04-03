@@ -29,9 +29,9 @@ function App() {
         {/* <ProfileUpdate />*/}
 
 
-        {/* <UserFollowers /> */}
+        {/*<UserFollowers /> */}
 
-        {/*<Search />*/}
+        <Search />
 
 
       </div>
