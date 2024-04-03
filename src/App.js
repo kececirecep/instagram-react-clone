@@ -3,7 +3,7 @@ import Aside from './components/Aside/Aside';
 import Header from './components/Header/Header';
 import Home from './pages/Home/Home'; 
 import PostShare from './pages/PostShare/PostShare';
-import Profile from './pages/Profile'; 
+import Profile from './pages/Profile/Profile'; 
 import Search from './pages/Search/Search'; 
 import UserFollowers from './pages/UserFollowers/UserFollowers';
 import ProfileUpdate from './pages/ProfileUpdate/ProfileUpdate'
