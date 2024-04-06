@@ -14,7 +14,22 @@ import Error from './pages/Error/Error'
 
 import { Routes, Route } from 'react-router-dom';
 
-function App() {  
+import { fetchAuthData } from './redux/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+function App() {
+  const currentUser = useSelector(state => state.auth.currentUser) 
+  const error = useSelector(state => state.auth.error)
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(fetchAuthData)
+  },[dispatch])
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <div className='flex'>
@@ -22,7 +37,9 @@ function App() {
       <div className='w-full flex flex-col h-[100vh]'>
         <Header />
 
-
+        {
+          currentUser ? console.log("oldu"+currentUser) : console.log("olmadı"+currentUser)
+        }
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/search' element={<Search/> } />

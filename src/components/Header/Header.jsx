@@ -13,8 +13,8 @@ const Header = () => {
                 <img src="/images/user.jpeg" className='w-[38px] h-[38px] object-cover rounded-full' alt="" />
                 <span className='font-semibold'>r.kececi</span>
             </Link>
-            <Button text="Login" bgColor="bg-[#0095f6]" color="text-white" url="/test" custom="mx-2" icon={<IoMdLogIn size={20} fontWeight={600}/>} /> 
-            <Button text="Register" bgColor="bg-[#0095f6]" color="text-white" url="/testx" custom="mx-2" icon={<LuUserPlus2 size={20} fontWeight={600}/>} /> 
+            <Button url="/Login" text="Login" bgColor="bg-[#0095f6]" color="text-white" custom="mx-2" icon={<IoMdLogIn size={20} fontWeight={600}/>} /> 
+            <Button url="/register" text="Register" bgColor="bg-[#0095f6]" color="text-white" custom="mx-2" icon={<LuUserPlus2 size={20} fontWeight={600}/>} /> 
         </div>
     )
 }
