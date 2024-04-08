@@ -1,49 +1,18 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit"; 
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from "../firebase/firebase";
+import { createSlice } from "@reduxjs/toolkit"; 
 
-export const fetchAuthData = createAsyncThunk(
-  'auth/fetchAuthData',
-  async () => {
-    return new Promise((resolve, reject) => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          resolve(user);
-        } else {
-          resolve(null);
-        }
-      }, (error) => {
-        reject(error);
-      });
-    });
-  }
-);
 
 const authSlice = createSlice({
     name:'auth',
     initialState:{
         currentUser: null,
-        loading: false,
-        error: null,
     },
-    reducers:{},
-    extraReducers: (builder) => {
-      builder
-        .addCase(fetchAuthData.pending, (state) => {
-          state.loading = true;
-          state.error = null;
-        })
-        .addCase(fetchAuthData.fulfilled, (state, action) => {
-          state.loading = false;
-          state.currentUser = action.payload;
-        })
-        .addCase(fetchAuthData.rejected, (state, action) => {
-          state.loading = false;
-          state.error = action.error.message;
-        });
-    }
+    reducers:{
+      setCurrentUser(state,action){
+        state.currentUser = action.payload;
+      }       
+    },
 });
 
-export const { } = authSlice.actions;
+export const { setCurrentUser } = authSlice.actions;
 
 export default authSlice.reducer;

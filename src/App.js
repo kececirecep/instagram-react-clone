@@ -1,10 +1,10 @@
 import './App.css';
 import Aside from './components/Aside/Aside';
 import Header from './components/Header/Header';
-import Home from './pages/Home/Home'; 
+import Home from './pages/Home/Home';
 import PostShare from './pages/PostShare/PostShare';
-import Profile from './pages/Profile/Profile'; 
-import Search from './pages/Search/Search'; 
+import Profile from './pages/Profile/Profile';
+import Search from './pages/Search/Search';
 import UserFollowers from './pages/UserFollowers/UserFollowers';
 import ProfileUpdate from './pages/ProfileUpdate/ProfileUpdate'
 import PostDetails from './pages/PostDetail/PostDetail'
@@ -14,22 +14,10 @@ import Error from './pages/Error/Error'
 
 import { Routes, Route } from 'react-router-dom';
 
-import { fetchAuthData } from './redux/authSlice';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 function App() {
-  const currentUser = useSelector(state => state.auth.currentUser) 
-  const error = useSelector(state => state.auth.error)
-  const dispatch = useDispatch();
-
-  useEffect(()=>{
-    dispatch(fetchAuthData)
-  },[dispatch])
-
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  const currentUser = useSelector(state => state.auth.currentUser)
 
   return (
     <div className='flex'>
@@ -37,23 +25,18 @@ function App() {
       <div className='w-full flex flex-col h-[100vh]'>
         <Header />
 
-        {
-          currentUser ? console.log("oldu"+currentUser) : console.log("olmadı"+currentUser)
-        }
         <Routes>
-          <Route path='/' element={<Home/>} />
-          <Route path='/search' element={<Search/> } />
-          <Route path='/post-share' element={<PostShare/> } />
-          <Route path='/profile' element={<Profile/> } />
-          <Route path='/followers/:username' element={<UserFollowers/> } />
-          <Route path='/update/:username' element={<ProfileUpdate/> } />
-          <Route path='/detail/:postId' element={<PostDetails/> } />
-          <Route path='/login' element={<Login/> } />
-          <Route path='/register' element={<Register/> } />
-          <Route path='*' element={<Error/> } />
+          <Route path='/' element={<Home />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/post-share' element={currentUser ? <PostShare /> : <Login />} />
+          <Route path='/profile/:username' element={<Profile />} />
+          <Route path='/followers/:username' element={<UserFollowers />} />
+          <Route path='/update/:username' element={<ProfileUpdate />} />
+          <Route path='/detail/:postId' element={<PostDetails />} />
+          <Route path='/login' element={currentUser ? <Home /> : <Login />} />
+          <Route path='/register' element={currentUser ? <Home /> : <Register />} />
+          <Route path='*' element={<Error />} />
         </Routes>
-
-
 
       </div>
     </div>
